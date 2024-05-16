@@ -1,8 +1,35 @@
 console.clear();
 const form = document.querySelector('[data-js="form"]');
 const main = document.querySelector('[data-js="main"]');
-const formFieldset = document.querySelector('[data-js="fieldset"]');
 const submitButton = document.querySelector('[data-js="submit_button"]');
+//const formFieldset = document.querySelector('[data-js="fieldset"]');
+const questionElement = document.querySelector('[data-js="question"]');
+const answerElement = document.querySelector('[data-js="answer"]');
+const characterLeftQuestion = document.querySelector(
+  '[data-js="charLeft_question"]'
+);
+const characterLeftAnswer = document.querySelector(
+  '[data-js="charLeft_answer"]'
+);
+const updateRemainingLength = (spanElement, remaininglength) => {
+  spanElement.textContent = `${remaininglength} characters left`;
+};
+const maxlength = questionElement.getAttribute("maxlength");
+
+//Initial value to be displayed next to textarea
+//updateRemainingLength(characterLeftQuestion, maxlength);
+//updateRemainingLength(characterLeftAnswer, maxlength);
+
+//Calculate remaining length of textarea input and update
+questionElement.addEventListener("input", (event) => {
+  const remaininglength = maxlength - event.target.value.length;
+  updateRemainingLength(characterLeftQuestion, remaininglength);
+});
+answerElement.addEventListener("input", (event) => {
+  const remaininglength = maxlength - event.target.value.length;
+  updateRemainingLength(characterLeftAnswer, remaininglength);
+});
+
 let questionInput;
 let answerInput;
 let tagInput;

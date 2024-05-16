@@ -17,13 +17,24 @@
           <legend for="fieldset" class="legend">Create your own card</legend>
           <label for="question_1"> Your question: </label>
           <textarea
+            data-js="question"
             name="question"
             id="question_1"
             cols="30"
             rows="10"
+            maxlength="150"
           ></textarea>
+          <span data-js="charLeft_question">Maximum 150 characters</span>
           <label for="answer_1">Your answer:</label>
-          <textarea name="answer" id="answer_1" cols="30" rows="10"></textarea>
+          <textarea
+            name="answer"
+            id="answer_1"
+            maxlength="150"
+            cols="30"
+            rows="10"
+            data-js="answer"
+          ></textarea>
+          <span data-js="charLeft_answer">Maximum 150 characters</span>
           <label for="tag_1">Tag:</label>
           <input type="text" name="tag" id="tag_1" />
         </fieldset>
