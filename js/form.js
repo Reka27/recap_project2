@@ -16,10 +16,6 @@ const updateRemainingLength = (spanElement, remaininglength) => {
 };
 const maxlength = questionElement.getAttribute("maxlength");
 
-//Initial value to be displayed next to textarea
-//updateRemainingLength(characterLeftQuestion, maxlength);
-//updateRemainingLength(characterLeftAnswer, maxlength);
-
 //Calculate remaining length of textarea input and update
 questionElement.addEventListener("input", (event) => {
   const remaininglength = maxlength - event.target.value.length;
